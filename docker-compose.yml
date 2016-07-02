@@ -5,6 +5,7 @@ services:
    build: 
       context: .
    image: workstation00
+   command: echo "done"
   workstation01:
     image: workstation00
     volumes:
