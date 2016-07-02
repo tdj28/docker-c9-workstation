@@ -6,6 +6,16 @@ Creates a comprehensive ubuntu 14:04 workstation with the Cloud 9 IDE as the int
 
 ## How do I run it?
 
+### docker-composer
+
+If you have multiple development directories you'd like to be the focus on their
+own c9 containers, you can modify the `docker-compose.yml` file to point to the
+development folders and assign unique ports. Then run `docker-compose up` and
+when compilation is complete, you can point your browser to the separate ports
+in separate tabs to have unique dev interfaces, e.g. [http://localhost:9990](http://localhost:9990)
+
+### docker build and run
+
 * Install [Docker](https://docs.docker.com/engine/installation/)
 * `docker build -t c9-only .`
 * `docker run -d -p 9999:9999 -v /path/to/folder-you-want-to-work-in:/usr/local/develop --name devdock c9-only`
