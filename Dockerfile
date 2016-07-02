@@ -10,14 +10,14 @@ MAINTAINER Tim Jones (tdj28@github)
 
 # Debian packages
 ENV DEBIAN_FRONTEND noninteractive
-COPY packages.txt /usr/local/packages.txt
+COPY ./apt/packages.txt /usr/local/packages.txt
 RUN apt-get update && cat /usr/local/packages.txt | xargs apt-get install -yq
 
 # Pip packages
 WORKDIR /usr/local/
 RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 RUN python3 get-pip.py
-COPY ./requirements.txt /usr/local/requirements.txt
+COPY ./pip/requirements.txt /usr/local/requirements.txt
 RUN pip3 --no-cache-dir install -r /usr/local/requirements.txt
 
 # Install Cloud9 IDE
@@ -31,7 +31,7 @@ RUN scripts/install-sdk.sh
 # Set up supervisor
 RUN mkdir -p /var/log/supervisor
 RUN mkdir -p /var/log/supervisor/conf.d
-COPY ./c9.conf /etc/supervisor/conf.d/c9.conf
+COPY ./supervisor/c9.conf /etc/supervisor/conf.d/c9.conf
 
 RUN mkdir /usr/local/develop
 
