@@ -1,10 +1,10 @@
 FROM ubuntu:14.04
 MAINTAINER Tim Jones (tdj28@github)
 
-# docker build -t c9-only --build-arg SSH_KEY="$(cat ~/.ssh/id_rsa)" .
+# docker build -t c9-only .
 
 # interactive:
-# docker run -i -t -p 9999:9999 -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent -v $PWD/folder:/usr/local/develop --name devdock c9-only
+# docker run -i -t -p 9999:9999 -v $PWD/folder:/usr/local/develop --name devdock c9-only
 
 # docker run -d -p 9999:9999 -v $PWD/folder:/usr/local/develop --name devdock c9-only
 
@@ -35,13 +35,7 @@ COPY ./c9.conf /etc/supervisor/conf.d/c9.conf
 
 RUN mkdir /usr/local/develop
 
-EXPOSE 9999
 WORKDIR /usr/local/develop
 USER root
-
-ARG SSH_KEY
-RUN mkdir -p /root/.ssh && \
-  echo "$SSH_KEY" >/root/.ssh/id_rsa && \
-  chmod 0600 /root/.ssh/id_rsa
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf", "-n"]
