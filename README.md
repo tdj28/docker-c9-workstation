@@ -26,7 +26,7 @@ in separate tabs to have unique dev interfaces, e.g. [http://localhost:9990](htt
 
 ## What does it include and how can I change that?
 
-The apt packages python pips can be found in the packages.txt and requirements.txt respectively.
+The apt packages and python pips can be found in the packages.txt and requirements.txt respectively.
 Simply edit those files before building the container.
 
 ## How can I add my ssh key in the container?
