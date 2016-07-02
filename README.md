@@ -18,7 +18,7 @@ Simply edit those files before building the container.
 
 ## How can I add my ssh key in the container?
 
-We turn this off by default as this is potentially dangerous, however, 
+We turn this off by default as this is [potentially dangerous](https://github.com/docker/docker/issues/6396), however, 
 you can add the following lines to the Docker container just above the final 
 `CMD` line:
 
