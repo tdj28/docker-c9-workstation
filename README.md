@@ -8,10 +8,13 @@ Creates a comprehensive ubuntu 14:04 workstation with the Cloud 9 IDE as the int
 
 ### docker-composer
 
-If you have multiple development directories you'd like to be the focus on their
+* Install [docker-compose](https://github.com/docker/compose/releases)
+* clone this repository and `cd` into it
+* If you have multiple development directories you'd like to be the focus on their
 own c9 containers, you can modify the `docker-compose.yml` file to point to the
-development folders and assign unique ports. Then run `docker-compose up` and
-when compilation is complete, you can point your browser to the separate ports
+development folders and assign unique ports. 
+* `docker-compose up`
+* when compilation is complete, you can point your browser to the separate ports
 in separate tabs to have unique dev interfaces, e.g. [http://localhost:9990](http://localhost:9990)
 
 ### docker build and run
