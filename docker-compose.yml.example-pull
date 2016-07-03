@@ -1,0 +1,20 @@
+# docker-compose up
+version: '2'
+services:
+  workstation01:
+    image: doctimjones/c9-linux-workstation
+    volumes:
+     - /home/username/project1:/usr/local/develop
+    ports:
+     - "9990:9999"
+    depends_on:
+     - workstation00
+  workstation02:
+    image: doctimjones/c9-linux-workstation
+    volumes:
+     - /home/username/project2:/usr/local/develop
+    ports:
+     - "9991:9999" 
+    depends_on:
+     - workstation00
+ 
