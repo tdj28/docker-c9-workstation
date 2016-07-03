@@ -20,7 +20,7 @@ docker run -d -p 9999:9999 -v /path/to/folder-you-want-to-work-in:/usr/local/dev
 
 * Install [docker-compose](https://github.com/docker/compose/releases)
 * clone this repository and `cd` into it
-* `cp docker-compose.yml.example docker-compose.yml`
+* `cp docker-compose.yml.example-pull docker-compose.yml`
 * If you have multiple development directories you'd like to be the focus on their
 own c9 containers, you can modify the `docker-compose.yml` file to point to the
 development folders and assign unique ports. 
@@ -30,10 +30,24 @@ in separate tabs to have unique dev interfaces, e.g. [http://localhost:9990](htt
 
 ### docker build and run
 
+### Docker command line
+
 * Install [Docker](https://docs.docker.com/engine/installation/)
 * `docker build -t doctimjones/c9-linux-workstation .`
 * `docker run -d -p 9999:9999 -v /path/to/folder-you-want-to-work-in:/usr/local/develop --name devdock doctimjones/c9-linux-workstation`
 * navigate your web-browser to [http://localhost:9999](http://localhost:9999)
+
+### Docker compose
+
+* Install [docker-compose](https://github.com/docker/compose/releases)
+* clone this repository and modify the Dockerfile and helper files per your needs
+* `cp docker-compose.yml.example-build docker-compose.yml`
+* If you have multiple development directories you'd like to be the focus on their
+own c9 containers, you can modify the `docker-compose.yml` file to point to the
+development folders and assign unique ports. 
+* `docker-compose up`
+* when compilation is complete, you can point your browser to the separate ports
+in separate tabs to have unique dev interfaces, e.g. [http://localhost:9990](http://localhost:9990)
 
 ## What does it include and how can I change that?
 
