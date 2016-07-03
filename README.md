@@ -6,6 +6,13 @@ Creates a comprehensive ubuntu 14:04 workstation with the Cloud 9 IDE as the int
 
 ## How do I run it?
 
+### Easiest way
+
+* Install [docker-compose](https://github.com/docker/compose/releases)
+* `docker pull doctimjones/c9-linux-workstation`
+* `docker run -d -p 9999:9999 -v /path/to/folder-you-want-to-work-in:/usr/local/develop --name devdock doctimjones/c9-linux-workstation`
+* Navigate to [http://localhost:9990](http://localhost:9990)
+
 ### docker-composer
 
 * Install [docker-compose](https://github.com/docker/compose/releases)

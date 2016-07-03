@@ -1,12 +1,12 @@
 FROM ubuntu:14.04
-MAINTAINER Tim Jones (tdj28@github)
+MAINTAINER Tim Jones (doctimjones@github)
 
-# docker build -t c9-only .
+# docker build -t doctimjones/c9-linux-workstation .
 
 # interactive:
-# docker run -i -t -p 9999:9999 -v $PWD/folder:/usr/local/develop --name devdock c9-only
+# docker run -i -t -p 9999:9999 -v $PWD/folder:/usr/local/develop --name devdock doctimjones/c9-linux-workstation
 
-# docker run -d -p 9999:9999 -v $PWD/folder:/usr/local/develop --name devdock c9-only
+# docker run -d -p 9999:9999 -v $PWD/folder:/usr/local/develop --name devdock doctimjones/c9-linux-workstation
 
 # Debian packages
 ENV DEBIAN_FRONTEND noninteractive
