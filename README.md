@@ -11,8 +11,11 @@ Creates a comprehensive ubuntu 14:04 workstation with the Cloud 9 IDE as the int
 * Install [Docker](https://docs.docker.com/engine/installation/)
 * 
 ```
-docker run -d -p 9999:9999 -v /path/to/folder-you-want-to-work-in:/usr/local/develop \
-      --name devdock doctimjones/c9-linux-workstation
+export MY_PATH=/path/to/folder-you-want-to-work-in
+export MY_CONTAINER=name-you-want-to-call-running-container
+export MY_PORT=9999
+docker run -d -p $MY_PORT:9999 -v $MY_PATH:/usr/local/develop \
+      --name $MY_CONTAINER doctimjones/c9-linux-workstation
 ```
 * Navigate to [http://localhost:9990](http://localhost:9990)
 
@@ -30,14 +33,14 @@ in separate tabs to have unique dev interfaces, e.g. [http://localhost:9990](htt
 
 ### docker build and run
 
-### Docker command line
+#### Docker command line
 
 * Install [Docker](https://docs.docker.com/engine/installation/)
 * `docker build -t doctimjones/c9-linux-workstation .`
 * `docker run -d -p 9999:9999 -v /path/to/folder-you-want-to-work-in:/usr/local/develop --name devdock doctimjones/c9-linux-workstation`
 * navigate your web-browser to [http://localhost:9999](http://localhost:9999)
 
-### Docker compose
+#### Docker compose
 
 * Install [docker-compose](https://github.com/docker/compose/releases)
 * clone this repository and modify the Dockerfile and helper files per your needs
