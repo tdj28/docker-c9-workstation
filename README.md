@@ -8,8 +8,7 @@ Creates a comprehensive ubuntu 14:04 workstation with the Cloud 9 IDE as the int
 
 ### Easiest way
 
-* Install [docker-compose](https://github.com/docker/compose/releases)
-* `docker pull doctimjones/c9-linux-workstation`
+* Install [Docker](https://docs.docker.com/engine/installation/)
 * `docker run -d -p 9999:9999 -v /path/to/folder-you-want-to-work-in:/usr/local/develop --name devdock doctimjones/c9-linux-workstation`
 * Navigate to [http://localhost:9990](http://localhost:9990)
 
@@ -28,8 +27,8 @@ in separate tabs to have unique dev interfaces, e.g. [http://localhost:9990](htt
 ### docker build and run
 
 * Install [Docker](https://docs.docker.com/engine/installation/)
-* `docker build -t c9-only .`
-* `docker run -d -p 9999:9999 -v /path/to/folder-you-want-to-work-in:/usr/local/develop --name devdock c9-only`
+* `docker build -t doctimjones/c9-linux-workstation .`
+* `docker run -d -p 9999:9999 -v /path/to/folder-you-want-to-work-in:/usr/local/develop --name devdock doctimjones/c9-linux-workstation`
 * navigate your web-browser to [http://localhost:9999](http://localhost:9999)
 
 ## What does it include and how can I change that?
