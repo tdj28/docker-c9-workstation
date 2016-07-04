@@ -8,8 +8,14 @@ MAINTAINER Tim Jones (doctimjones@github)
 
 # docker run -d -p 9999:9999 -v $PWD/folder:/usr/local/develop --name devdock doctimjones/c9-linux-workstation
 
-# Debian packages
 ENV DEBIAN_FRONTEND noninteractive
+
+# R 
+RUN sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list'
+RUN gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
+RUN gpg -a --export E084DAB9 | apt-key add -
+
+# Apt packages
 COPY ./apt/packages.txt /usr/local/packages.txt
 RUN apt-get update && cat /usr/local/packages.txt | xargs apt-get install -yq
 

@@ -13,6 +13,7 @@ python-dev
 python3-dev
 r-base
 r-base-core
+r-base-dev
 rsyslog
 software-properties-common
 supervisor
