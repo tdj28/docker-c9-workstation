@@ -11,6 +11,7 @@ Creates a comprehensive ubuntu 14:04 workstation with the Cloud 9 IDE as the int
 * Install [Docker](https://docs.docker.com/engine/installation/)
 * 
 ```
+docker pull doctimjones/c9-linux-workstation
 export MY_PATH=/path/to/folder-you-want-to-work-in
 export MY_CONTAINER=name-you-want-to-call-running-container
 export MY_PORT=9999
@@ -27,6 +28,7 @@ docker run -d -p $MY_PORT:9999 -v $MY_PATH:/usr/local/develop \
 * If you have multiple development directories you'd like to be the focus on their
 own c9 containers, you can modify the `docker-compose.yml` file to point to the
 development folders and assign unique ports. 
+* `docker pull doctimjones/c9-linux-workstation`
 * `docker-compose up`
 * when compilation is complete, you can point your browser to the separate ports
 in separate tabs to have unique dev interfaces, e.g. [http://localhost:9990](http://localhost:9990)
