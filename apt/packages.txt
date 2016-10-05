@@ -6,6 +6,7 @@ g++
 libpq-dev
 libfreetype6-dev
 libxft-dev
+mongodb-org
 nodejs
 nmap
 npm
