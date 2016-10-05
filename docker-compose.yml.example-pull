@@ -1,16 +1,30 @@
 # docker-compose up
 version: '2'
 services:
-  workstation01:
+  project1:
     image: doctimjones/c9-linux-workstation
     volumes:
-     - /home/username/project1:/usr/local/develop
+     - $HOME/my_project1:/usr/local/develop
+     - $HOME/.ssh:/root/.ssh
+     - $HOME/.aws:/root/.aws
+     - $HOME/.config:/root/.config
+     - $HOME/.gitconfig:/root/.gitconfig
+     - $HOME/.bash_profile:/root/.bash_profile
+     - $HOME/.vim:/root/.vim
+     - $HOME/.vimrc:/root/.vimrc
     ports:
      - "9990:9999"
-  workstation02:
+  project2:
     image: doctimjones/c9-linux-workstation
     volumes:
-     - /home/username/project2:/usr/local/develop
+     - $HOME/my_project2:/usr/local/develop
+     - $HOME/.ssh:/root/.ssh
+     - $HOME/.aws:/root/.aws
+     - $HOME/.config:/root/.config
+     - $HOME/.gitconfig:/root/.gitconfig
+     - $HOME/.bash_profile:/root/.bash_profile
+     - $HOME/.vim:/root/.vim
+     - $HOME/.vimrc:/root/.vimrc
     ports:
      - "9991:9999" 
 

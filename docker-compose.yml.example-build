@@ -6,18 +6,32 @@ services:
       context: .
    image: workstation00
    command: echo "done"
-  workstation01:
+  project1:
     image: workstation00
     volumes:
-     - /home/username/project1:/usr/local/develop
+     - $HOME/my_project1:/usr/local/develop
+     - $HOME/.ssh:/root/.ssh
+     - $HOME/.aws:/root/.aws
+     - $HOME/.config:/root/.config
+     - $HOME/.gitconfig:/root/.gitconfig
+     - $HOME/.bash_profile:/root/.bash_profile
+     - $HOME/.vim:/root/.vim
+     - $HOME/.vimrc:/root/.vimrc
     ports:
      - "9990:9999"
     depends_on:
      - workstation00
-  workstation02:
+  project2:
     image: workstation00
     volumes:
-     - /home/username/project2:/usr/local/develop
+     - $HOME/my_project1:/usr/local/develop
+     - $HOME/.ssh:/root/.ssh
+     - $HOME/.aws:/root/.aws
+     - $HOME/.config:/root/.config
+     - $HOME/.gitconfig:/root/.gitconfig
+     - $HOME/.bash_profile:/root/.bash_profile
+     - $HOME/.vim:/root/.vim
+     - $HOME/.vimrc:/root/.vimrc
     ports:
      - "9991:9999" 
     depends_on:
