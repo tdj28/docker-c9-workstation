@@ -26,8 +26,10 @@ RUN apt-get update && cat /usr/local/packages.txt | xargs apt-get install -yq
 # Pip packages
 WORKDIR /usr/local/
 RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+RUN python2.7 get-pip.py
 RUN python3 get-pip.py
 COPY ./pip/requirements.txt /usr/local/requirements.txt
+RUN pip2 --no-cache-dir install -r /usr/local/requirements.txt
 RUN pip3 --no-cache-dir install -r /usr/local/requirements.txt
 
 # Install Cloud9 IDE
