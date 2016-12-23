@@ -3,6 +3,7 @@ debconf-utils
 gcc
 git
 g++
+imagemagick
 libpq-dev
 libfreetype6-dev
 libxft-dev
