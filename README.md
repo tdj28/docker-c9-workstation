@@ -18,7 +18,7 @@ export MY_PORT=9999
 docker run -d -p $MY_PORT:9999 -v $MY_PATH:/usr/local/develop \
       --name $MY_CONTAINER doctimjones/c9-linux-workstation
 ```
-* Navigate to [http://localhost:9990](http://localhost:9990)
+* Navigate to [http://localhost:9999](http://localhost:9999)
 
 ### docker-composer
 
